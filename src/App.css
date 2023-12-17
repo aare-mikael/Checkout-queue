@@ -1,38 +1,151 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #1b1b1b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 25%;
+  z-index: 10;
+  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: calc(10px + 1vmin);
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 50%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: static;
+  font-size: calc(10px + 1vmin);
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.form label {
+  width: 25%;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.form input {
+  width: 25%;
+  padding: 0.25rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid white;
+  background-color: #1a1a1a;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form button {
+  width: 40%;
+  padding: 0.25rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid white;
+  background-color: #1a1a1a;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form button:hover {
+  background-color: lightgray;
+  color: white;
+  transition: ease 0.3s all;
+  cursor: pointer;
+}
+
+.queues {
+  align-items: top;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(5, 15rem);
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;  
+}
+
+.queue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  padding: 0.25rem;
+  border: 1px dashed white;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+}
+
+.queue p {
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-emphasis: bold;
+}
+
+.queue-items {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.queue-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.last-item {
+  width: 100%;
+  animation: move-left-up 2s forwards;
+}
+
+.new-item {
+  background-color: rgb(20, 121, 199);
+}
+
+@keyframes move-left-up {
+  0% {
+    margin-left: -0rem;
+    margin-top: 0rem;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    background-color: green;
+  }
+  50% {
+    background-color: green;
+    margin-left: -10rem;
+  }
+  75% {
+    background-color: green;
+    margin-left: -10rem;
+    margin-top: -2.95rem;
+    opacity: calc(100%);
+  }
+  100% {    
+    background-color: green;
+    margin-left: -10rem;
+    margin-top: -2.95rem;
+    opacity: calc(0%);
   }
 }
